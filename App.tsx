@@ -2,11 +2,12 @@ import { View, Image, TouchableOpacity, Dimensions } from "react-native";
 import { useState } from "react";
 
 import { io } from "socket.io-client";
-import { SOCKET_SERVER_URL } from "@env";
+import { SOCKET_SERVER_URL, AUTH_TOKEN } from "@env";
 const socket = io.connect(SOCKET_SERVER_URL);
 
 socket.on("connect", () => {
     console.log("connect");
+    socket.emit("authorize", AUTH_TOKEN);
     socket.emit("getThList");
 });
 

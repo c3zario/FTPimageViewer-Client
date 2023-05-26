@@ -20,4 +20,5 @@ react-native start "--reset-cache"
 ## .env example
 ```
 SOCKET_SERVER_URL = http://example.com:3000
+AUTH_TOKEN = "..." #565 characters
 ```
